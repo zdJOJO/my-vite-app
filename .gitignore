@@ -63,3 +63,4 @@ dist/
 
 .vscode
 *.copy
+node_modules
