@@ -1,7 +1,7 @@
 {
   "name": "my-vite-app",
   "version": "0.0.0",
-  "homepage": "https://zdjojo.github.com/my-vite-app",
+  "homepage": "https://zdJOJO.github.io/my-vite-app",
   "license": "ISC",
   "scripts": {
     "dev": "vite",
