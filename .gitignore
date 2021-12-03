@@ -59,7 +59,6 @@ typings/
 .env
 
 # Release folder
-dist/
 
 .vscode
 *.copy
