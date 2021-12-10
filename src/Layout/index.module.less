@@ -1,0 +1,56 @@
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.content {
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+}
+
+.logo {
+  margin: 0 28px 16px 0;
+  line-height: 50px;
+
+  img {
+    width: 120px;
+    height: 31px;
+  }
+}
+
+.userInfo {
+  flex: none;
+  margin: 16px 0 16px 0;
+
+  .action {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .userName {
+      margin-left: 8px;
+      color: #ffffff;
+    }
+  }
+}
+
+.nav {
+  flex: 1;
+}
+
+:global {
+  .maincontents {
+    .ant-input[disabled] {
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

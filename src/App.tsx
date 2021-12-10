@@ -1,22 +1,24 @@
-import {
-  HashRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+import React from 'react'
+import { lazy, Suspense } from 'react'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import AppLayout from './Layout'
 import './App.less'
 
-import Home from '@pages/Home'
-import About from '@pages/About'
+const Home = lazy(() => import(/* webpackChunkName: "home" */ '@pages/Home'))
+const About = lazy(() => import(/* webpackChunkName: "about" */ '@pages/About'))
 
 function App() {
-
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
-      </Routes>
-    </Router>
+    <Suspense fallback={<div>loading...</div>}>
+      <Router>
+        <AppLayout>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+          </Routes>
+        </AppLayout>
+      </Router>
+    </Suspense>
   )
 }
 

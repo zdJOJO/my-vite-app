@@ -2,11 +2,22 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, ServerOptions } from 'vite'
 import vitePluginImp from 'vite-plugin-imp'
 import { getThemeVariables } from 'antd/dist/theme'
-import path from "path";
+import path from 'path'
 import alias from '@rollup/plugin-alias'
 
+// http:pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/schedule/v2
+
+const env: 'dev' | 'test' = 'dev'
+
 const server: ServerOptions = {
-  port: 8003
+  port: 8003,
+  proxy: {
+    '/dispatch': {
+      target: `http:pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/schedule/v2`,
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/dispatch/, '')
+    }
+  }
 }
 
 // https://vitejs.dev/config/
@@ -21,7 +32,7 @@ export default defineConfig({
         {
           libName: 'antd',
           libDirectory: 'es',
-          style: (name) => `antd/es/${name}/style`
+          style: name => `antd/es/${name}/style`
         }
       ]
     })
@@ -32,7 +43,7 @@ export default defineConfig({
         javascriptEnabled: true,
         modifyVars: {
           ...getThemeVariables({
-            dark: true,
+            dark: true
           }),
           'primary-color': '#41b883'
         }
@@ -43,11 +54,11 @@ export default defineConfig({
     alias: [
       {
         find: '@',
-        replacement: path.resolve(__dirname, "src")
+        replacement: path.resolve(__dirname, 'src')
       },
       {
         find: '@pages',
-        replacement: path.resolve(__dirname, "src/pages")
+        replacement: path.resolve(__dirname, 'src/pages')
       }
     ]
   },
