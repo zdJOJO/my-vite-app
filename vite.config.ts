@@ -1,11 +1,10 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig, ServerOptions } from 'vite'
 import vitePluginImp from 'vite-plugin-imp'
+import viteCompression from 'vite-plugin-compression' //压缩gzip
 import { getThemeVariables } from 'antd/dist/theme'
 import path from 'path'
 import alias from '@rollup/plugin-alias'
-
-// http:pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/schedule/v2
 
 const env: 'dev' | 'test' = 'dev'
 
@@ -24,6 +23,7 @@ const server: ServerOptions = {
 export default defineConfig({
   base: './',
   plugins: [
+    viteCompression(),
     alias(),
     react(),
     vitePluginImp({
@@ -43,7 +43,7 @@ export default defineConfig({
         javascriptEnabled: true,
         modifyVars: {
           ...getThemeVariables({
-            dark: true
+            dark: false
           }),
           'primary-color': '#41b883'
         }
@@ -62,5 +62,10 @@ export default defineConfig({
       }
     ]
   },
-  server: { ...server }
+  server: { ...server },
+  build: {
+    rollupOptions: {
+      output: {}
+    }
+  }
 })
