@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from 'antd'
+import { Button, Space } from 'antd'
 import { Link } from 'react-router-dom'
 import logo from '../../logo.svg'
 import './index.less'
@@ -12,12 +12,13 @@ const Home = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
-        <p>
+        <Space size={20}>
           <Button type="primary" onClick={() => setCount(count => count + 1)}>
             count is {count}
           </Button>
-          <Link to="/about">go about</Link>
-        </p>
+          <Link to="/about">about</Link>
+          <Link to="/dispatch"> dispatch</Link>
+        </Space>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>

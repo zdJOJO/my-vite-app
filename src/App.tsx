@@ -2,10 +2,11 @@ import React from 'react'
 import { lazy, Suspense } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import AppLayout from './Layout'
-import './App.less'
+import './App.module.less'
 
 const Home = lazy(() => import(/* webpackChunkName: "home" */ '@pages/Home'))
 const About = lazy(() => import(/* webpackChunkName: "about" */ '@pages/About'))
+const Dispatch = lazy(() => import(/* webpackChunkName: "dispatch" */ '@pages/Dispatch'))
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="/dispatch" element={<Dispatch />}></Route>
           </Routes>
         </AppLayout>
       </Router>

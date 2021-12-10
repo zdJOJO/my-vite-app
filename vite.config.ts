@@ -9,12 +9,17 @@ import alias from '@rollup/plugin-alias'
 const env: 'dev' | 'test' = 'dev'
 
 const server: ServerOptions = {
-  port: 8003,
+  port: 3000,
   proxy: {
-    '/dispatch': {
-      target: `http:pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/schedule/v2`,
-      changeOrigin: true,
-      rewrite: path => path.replace(/^\/dispatch/, '')
+    '/schedule': {
+      target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/v2/dispatch`,
+      changeOrigin: true
+      // rewrite: path => path.replace(/^\/dispatch/, '')
+    },
+    '/api': {
+      target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com`,
+      changeOrigin: true
+      // rewrite: path => path.replace(/^\/dispatch/, '')
     }
   }
 }
@@ -45,7 +50,7 @@ export default defineConfig({
           ...getThemeVariables({
             dark: false
           }),
-          'primary-color': '#41b883'
+          'primary-color': '#009688'
         }
       }
     }
