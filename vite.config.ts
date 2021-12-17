@@ -9,7 +9,7 @@ import alias from '@rollup/plugin-alias'
 const env: 'dev' | 'test' = 'dev'
 
 const server: ServerOptions = {
-  port: 3000,
+  port: 8003,
   proxy: {
     '/schedule': {
       target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/v2/dispatch`,

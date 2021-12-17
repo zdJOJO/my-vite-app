@@ -1,5 +1,4 @@
-import React from 'react'
-import { lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import AppLayout from './Layout'
 import './App.module.less'

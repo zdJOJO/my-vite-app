@@ -3,6 +3,9 @@ import { DispatchSpace } from './index.d'
 //TODO: 退出登录
 export const logOut = () => {
   return fetch('/api/user/logout', {
+    headers: {
+      Accept: 'application/json, text/plain, */*'
+    },
     credentials: 'include'
   })
     .then(res => res.json())
@@ -27,6 +30,9 @@ interface Result {
 export const getTableData = ({ current, pageSize }: any): Promise<Result> => {
   const query = `execTime=2021-12-09&pageNumber=${current}&pageSize=${1000}`
   return fetch(`/schedule/v2/dispatch/queryDispatchPage?${query}`, {
+    headers: {
+      Accept: 'application/json, text/plain, */*'
+    },
     credentials: 'include'
   })
     .then(res => res.json())
