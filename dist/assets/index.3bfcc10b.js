@@ -1,0 +1,1 @@
+import{j as e,p as s}from"./vendor.6ed81281.js";var o="C:\\projects\\my-vite-app\\src\\pages\\About\\index.tsx";const r=()=>e.exports.jsxDEV("div",{children:e.exports.jsxDEV(s,{to:"/",children:"go 222home"},void 0,!1,{fileName:o,lineNumber:7,columnNumber:7},globalThis)},void 0,!1,{fileName:o,lineNumber:6,columnNumber:5},globalThis);export{r as default};

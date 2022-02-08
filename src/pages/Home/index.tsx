@@ -17,7 +17,7 @@ const Home = () => {
             count is {count}
           </Button>
           <Link to="/about">about</Link>
-          <Link to="/dispatch"> dispatch</Link>
+          <Link to="/"> dispatch</Link>
         </Space>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.

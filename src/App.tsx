@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import AppLayout from './Layout'
 import './App.module.less'
 
@@ -13,9 +13,9 @@ function App() {
       <Router>
         <AppLayout>
           <Routes>
-            <Route path="/" element={<Dispatch />}></Route>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
+            <Route path="/" element={<Dispatch />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </AppLayout>
       </Router>
