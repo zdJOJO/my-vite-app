@@ -1,6 +1,9 @@
 # my-vite-app
 基于 vite 的 react app
 
+##  [demo 展示](https://zdjojo.github.io/my-vite-app)
+
+
 ## 如何将master 分支下的 dist 文件夹推送到 gh-pages 分支
 ### 第一步
 
