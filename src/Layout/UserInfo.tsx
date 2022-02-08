@@ -9,7 +9,7 @@ const Overlay = () => {
     <Menu>
       <Menu.Item key="logout" onClick={() => logOut()}>
         <LogoutOutlined style={{ marginRight: '8px' }} />
-        {'退出登录'}
+        退出登录
       </Menu.Item>
     </Menu>
   )

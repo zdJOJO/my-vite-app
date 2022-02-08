@@ -23,7 +23,7 @@ const Dispatch = () => {
         columns={columns}
         onRow={(record: DispatchSpace.IDispatchRow) => {
           return {
-            onMouseEnter: event => {
+            onMouseEnter: () => {
               setCurrentDispatchId(record.dispatchId)
             } // 鼠标移入行
           }

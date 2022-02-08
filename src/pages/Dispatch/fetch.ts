@@ -1,17 +1,16 @@
+import request from '@/utils/request'
+import { message } from 'antd'
 import { DispatchSpace } from './index.d'
 
 //TODO: 退出登录
-export const logOut = () => {
-  return fetch('/api/user/logout', {
-    headers: {
-      Accept: 'application/json, text/plain, */*'
-    },
-    credentials: 'include'
-  })
-    .then(res => res.json())
-    .then(result => {
+export const logOut = async () => {
+  try {
+    const result: any = await request.get('/user/logout', {
+      baseURL: import.meta.env.VITE_UAA_SDK_URL
+    })
+    if (result) {
       const paramsList: any[] = []
-      Object.keys(result).forEach(key => {
+      Object.keys(result).forEach((key: any) => {
         const value = result[key]
         if (key !== 'url') {
           paramsList.push([key, value].join('='))
@@ -19,7 +18,10 @@ export const logOut = () => {
       })
       const newUrl = `${result.url}?${paramsList.join('&')}`
       window.location.href = newUrl
-    })
+    }
+  } catch (err) {
+    message.error(err as any)
+  }
 }
 
 //TODO: 获取表格数据
@@ -27,20 +29,16 @@ interface Result {
   total: number
   list: DispatchSpace.IDispatchRow[]
 }
-export const getTableData = ({ current, pageSize }: any): Promise<Result> => {
-  const query = `execTime=2021-12-09&pageNumber=${current}&pageSize=${1000}`
-  return fetch(`/schedule/v2/dispatch/queryDispatchPage?${query}`, {
-    headers: {
-      Accept: 'application/json, text/plain, */*'
-    },
-    credentials: 'include'
+export const getTableData = async ({ current, pageSize }: any): Promise<Result> => {
+  const result: any = await request.get(`/dispatch/queryDispatchPage`, {
+    params: {
+      pageSize: pageSize || 1000,
+      pageNumber: current,
+      execTime: '2021-12-09'
+    }
   })
-    .then(res => res.json())
-    .then(res => ({
-      list: res.data,
-      total: res.size
-    }))
+  return {
+    list: result.data || [],
+    total: result.size || 0
+  }
 }
-
-// http://uaa.usercenter-usertest.dtwb.ibuscloud.com/login?client_id=bigapp&state=yzxcc58kqd&scope=openid&redirect_uri=http://pubtrans-ias.schedule-dev.dtwb.ibuscloud.com/login/sso&response_type=code&name=/ibus/627961782
-// http://uaa.usercenter-usertest.dtwb.ibuscloud.com/login?client_id=bigapp&state=ucnzzmla8i&scope=openid&redirect_uri=http://pubtrans-ias.schedule-dev.dtwb.ibuscloud.com/login/sso&response_type=code&name=/ibus/627961782

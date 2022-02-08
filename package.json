@@ -5,12 +5,14 @@
   "license": "ISC",
   "scripts": {
     "dev": "vite",
+    "test": "vite --mode test",
+    "prod": "vite --mode production",
     "build-dev": "tsc && vite build --mode development",
-    "build-pro": "tsc && vite build --mode production",
     "build-test": "tsc && vite build --mode test",
+    "build-pro": "tsc && vite build --mode production",
     "serve-dev": "vite preview --mode development",
-    "serve-pro": "vite preview --mode production",
     "serve-test": "vite preview --mode test",
+    "serve-pro": "vite preview --mode production",
     "deploy": "gh-pages -d dist",
     "lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src"
   },
@@ -18,7 +20,9 @@
     "@ant-design/icons": "^4.7.0",
     "ahooks": "^3.0.0",
     "antd": "^4.17.2",
+    "axios": "^0.25.0",
     "dayjs": "^1.10.7",
+    "qs": "^6.10.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^6.0.2"
@@ -43,5 +47,8 @@
     "vite": "^2.6.4",
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-imp": "^2.0.9"
+  },
+  "optionalDependencies": {
+    "@types/qs": "^6.9.7"
   }
 }

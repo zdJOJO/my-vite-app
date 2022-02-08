@@ -25,7 +25,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
       <Layout className={classes.content}>
         <Header className={classes.header}>
           <div className={classes.logo}>
-            <a href={import.meta.env.VITE_USER_CENTER_URL}>
+            <a href={import.meta.env.VITE_USERCENTER_URL}>
               <img src={logo} alt="" />
             </a>
           </div>

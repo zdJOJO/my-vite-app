@@ -6,22 +6,20 @@ import { getThemeVariables } from 'antd/dist/theme'
 import path from 'path'
 import alias from '@rollup/plugin-alias'
 
-const env: 'dev' | 'test' = 'dev'
+// const env: 'dev' | 'test' = 'dev'
 
 const server: ServerOptions = {
-  port: 8003,
-  proxy: {
-    '/schedule': {
-      target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/v2/dispatch`,
-      changeOrigin: true
-      // rewrite: path => path.replace(/^\/dispatch/, '')
-    },
-    '/api': {
-      target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com`,
-      changeOrigin: true
-      // rewrite: path => path.replace(/^\/dispatch/, '')
-    }
-  }
+  port: 8003
+  // proxy: {
+  //   '/schedule': {
+  //     target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com/v2/dispatch`,
+  //     changeOrigin: true
+  //   },
+  //   '/api': {
+  //     target: `http://pubtrans-ias.schedule-${env}.dtwb.ibuscloud.com`,
+  //     changeOrigin: true
+  //   }
+  // }
 }
 
 // https://vitejs.dev/config/

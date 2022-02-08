@@ -2,9 +2,15 @@
 
 interface ImportMetaEnv {
   readonly VITE_API_ENV: 'dev' | 'test'
-  readonly VITE_USER_CENTER_URL: string
-  readonly VITE_COOKIE_KEY: string
-  readonly VITE_COOKIE_VALUE: string
+
+  // 接口地址
+  readonly VITE_DIPATCH_RELAY_RULE: string
+  readonly VITE_PUBTRANS_BASE_URL: string
+  readonly VITE_DIPATCH_CACHE_URL: string
+  readonly VITE_UAA_SDK_DOMAIN: string
+  readonly VITE_UAA_SDK_URL: string
+  readonly VITE_USERCENTER_URL: string
+  readonly VITE_IBS_URL: string
 }
 
 interface ImportMeta {
