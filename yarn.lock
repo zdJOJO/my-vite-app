@@ -372,6 +372,13 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@swc/helpers@^0.3.13":
+  version "0.3.17"
+  resolved "https://registry.npmmirror.com/@swc/helpers/-/helpers-0.3.17.tgz#7c1b91f43c77e2bba99492162a498d465ef253d5"
+  integrity sha512-tb7Iu+oZ+zWJZ3HJqwx8oNwSDIU440hmVMDPhpACWQWnrZHK99Bxs70gT1L2dnr5Hg50ZRWEFkQCAnOVVV0z1Q==
+  dependencies:
+    tslib "^2.4.0"
+
 "@types/js-cookie@^2.x.x":
   version "2.2.7"
   resolved "https://registry.npmmirror.com/@types/js-cookie/-/js-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"
@@ -422,6 +429,11 @@
   version "0.16.2"
   resolved "https://registry.npmmirror.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@types/uuid@^8.3.4":
+  version "8.3.4"
+  resolved "https://registry.npmmirror.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@typescript-eslint/eslint-plugin@^5.6.0":
   version "5.11.0"
@@ -1240,6 +1252,11 @@ esutils@^2.0.2:
   version "2.0.3"
   resolved "https://registry.npmmirror.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
+
+eventemitter3@^4.0.7:
+  version "4.0.7"
+  resolved "https://registry.npmmirror.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
+  integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
@@ -2084,6 +2101,21 @@ path-type@^4.0.0:
   resolved "https://registry.npmmirror.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+peerjs-js-binarypack@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/peerjs-js-binarypack/-/peerjs-js-binarypack-1.0.1.tgz#80fa2b61c794a6b16d64253700405e476ada29be"
+  integrity sha512-N6aeia3NhdpV7kiGxJV5xQiZZCVEEVjRz2T2C6UZQiBkHWHzUv/oWA4myQLcwBwO8LUoR1KWW5oStvwVesmfCg==
+
+peerjs@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.npmmirror.com/peerjs/-/peerjs-1.4.6.tgz#781f335f4043fcd686dc19acd3341db0570f7e72"
+  integrity sha512-0XA105/9yBFGxfpyCjlI1bcBiyPmXHs8+UDvO2j1WGnY+FXilMn35+P/3t8HzKnUnR1SX0PRkDSk8kM17ciNxA==
+  dependencies:
+    "@swc/helpers" "^0.3.13"
+    eventemitter3 "^4.0.7"
+    peerjs-js-binarypack "1.0.1"
+    webrtc-adapter "^7.7.1"
+
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
@@ -2655,6 +2687,13 @@ rollup@^2.59.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+rtcpeerconnection-shim@^1.2.15:
+  version "1.2.15"
+  resolved "https://registry.npmmirror.com/rtcpeerconnection-shim/-/rtcpeerconnection-shim-1.2.15.tgz#e7cc189a81b435324c4949aa3dfb51888684b243"
+  integrity sha512-C6DxhXt7bssQ1nHb154lqeL0SXz5Dx4RczXZu2Aa/L1NJFnEVDxFwCBo3fqtuljhHIGceg5JKBV4XJ0gW5JKyw==
+  dependencies:
+    sdp "^2.6.0"
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.npmmirror.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"
@@ -2696,6 +2735,11 @@ scroll-into-view-if-needed@^2.2.25:
   integrity sha512-hxpAR6AN+Gh53AdAimHM6C8oTN1ppwVZITihix+WqalywBeFcQ6LdQP5ABNl26nX8GTEL7VT+b8lKpdqq65wXg==
   dependencies:
     compute-scroll-into-view "^1.0.17"
+
+sdp@^2.12.0, sdp@^2.6.0:
+  version "2.12.0"
+  resolved "https://registry.npmmirror.com/sdp/-/sdp-2.12.0.tgz#338a106af7560c86e4523f858349680350d53b22"
+  integrity sha512-jhXqQAQVM+8Xj5EjJGVweuEzgtGWb3tmEEpl3CLP3cStInSbVHSg0QWOGQzNq8pSID4JkpeV2mPqlMDLrm0/Vw==
 
 semver@^5.6.0:
   version "5.7.1"
@@ -2877,6 +2921,11 @@ tslib@^2.0.3, tslib@^2.3.0:
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
+tslib@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
 tsutils@^3.21.0:
   version "3.21.0"
   resolved "https://registry.npmmirror.com/tsutils/-/tsutils-3.21.0.tgz#b48717d394cea6c1e096983eed58e9d61715b623"
@@ -2928,6 +2977,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.npmmirror.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.npmmirror.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
@@ -2966,6 +3020,14 @@ vite@^2.6.4:
     rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+webrtc-adapter@^7.7.1:
+  version "7.7.1"
+  resolved "https://registry.npmmirror.com/webrtc-adapter/-/webrtc-adapter-7.7.1.tgz#b2c227a6144983b35057df67bd984a7d4bfd17f1"
+  integrity sha512-TbrbBmiQBL9n0/5bvDdORc6ZfRY/Z7JnEj+EYOD1ghseZdpJ+nF2yx14k3LgQKc7JZnG7HAcL+zHnY25So9d7A==
+  dependencies:
+    rtcpeerconnection-shim "^1.2.15"
+    sdp "^2.12.0"
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
