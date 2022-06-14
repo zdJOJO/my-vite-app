@@ -64,4 +64,4 @@ typings/
 *.copy
 node_modules
 
-dist/
+dist
