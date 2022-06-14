@@ -1,4 +1,4 @@
-import React, { useTransition, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, DatePicker, Select, Space } from 'antd'
 import { Link } from 'react-router-dom'
 import logo from '../../logo.svg'
@@ -25,7 +25,7 @@ const Home = () => {
             <Link to="/about">about</Link>
           </li>
           <li>
-            <Link to="/"> dispatch</Link>
+            <Link to="/dispatch"> dispatch</Link>
           </li>
         </ul>
         <img src={logo} className="App-logo" alt="logo" />

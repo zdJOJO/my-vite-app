@@ -4,22 +4,29 @@ import { Avatar, Dropdown, Menu } from 'antd'
 import React, { useState } from 'react'
 import classes from './index.module.less'
 
-const Overlay = () => {
-  return (
-    <Menu>
-      <Menu.Item key="logout" onClick={() => logOut()}>
-        <LogoutOutlined style={{ marginRight: '8px' }} />
-        退出登录
-      </Menu.Item>
-    </Menu>
-  )
-}
-
 const UserInfo = () => {
   const [info, setInfo] = useState<{ name: string }>({ name: 'test' })
+
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: 'logout',
+          label: (
+            <>
+              <LogoutOutlined style={{ marginRight: '8px' }} />
+              退出登录
+            </>
+          ),
+          onClick: () => logOut()
+        }
+      ]}
+    />
+  )
+
   return (
     <div className={classes.userInfo}>
-      <Dropdown overlay={<Overlay />}>
+      <Dropdown overlay={menu}>
         <div className={classes.action}>
           <Avatar size="small" src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
           <span className={classes.userName}>{info.name}</span>

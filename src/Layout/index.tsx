@@ -1,8 +1,9 @@
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 import { ConfigProvider, Layout } from 'antd'
 import dayjs from 'dayjs'
 import zhCN from 'antd/es/locale/zh_CN'
 import 'dayjs/locale/zh-cn' // import locale
-import React, { FC } from 'react'
 import logo from './logo@2x.png'
 import NavMenu from './NavMenu'
 import UserInfo from './UserInfo'
@@ -15,11 +16,7 @@ const { Header, Content } = Layout
 
 dayjs.locale('zh-cn') // use locale
 
-interface AppLayoutProps {
-  children: any
-}
-
-const AppLayout: FC<AppLayoutProps> = ({ children }) => {
+const AppLayout = () => {
   return (
     <ConfigProvider locale={zhCN}>
       <Layout className={classes.content}>
@@ -37,7 +34,9 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
           <UserInfo />
         </Header>
 
-        <Content className="maincontents">{children}</Content>
+        <Content className="maincontents">
+          <Outlet />
+        </Content>
       </Layout>
     </ConfigProvider>
   )

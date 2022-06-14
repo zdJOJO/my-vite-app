@@ -26,7 +26,8 @@ instance.interceptors.response.use(
         -1
     ) {
       message.error({
-        content: response.data.message || '服务器错误'
+        content: response.data.message || '服务器错误',
+        type: 'error'
       })
       throw Error(response.data.message || '服务器错误')
     }
